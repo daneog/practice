@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no"/> 
+    <title>공구함</title>
+    <meta charset="utf-8">
+        <link rel="shortcut icon" href="/images/seda.png">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-indigo.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="jquery-ui.min.css">
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+            overflow: hidden;
+        }
+        .pink {
+            color: #EFB9D1;
+        }
+        .black{
+            color: #000000;
+        }
+        .gray {
+            color: #707070;
+        }
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+        body {
+            overflow: hidden;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        tbody {
+            padding: 20px;
+            background: #fafafa;
+            position: relative;
+        }
+        @-webkit-keyframes animatebottom {
+            from { bottom:-100px; opacity:0 }
+            to { bottom:0px; opacity:1 }
+        }
+        @keyframes animatebottom {
+            from{ bottom:-100px; opacity:0 }
+            to{ bottom:0; opacity:1 }
+        }
+        @media screen and (max-width: 1024px){
+            .mdl-layout__header {
+                display: inherit;
+            }
+        }
+    </style>
+    </head>
+<body style="background-color:#ffffff;width:100%;">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header" style="background-color:indianred">        
+            <div class="mdl-layout__header-row" style="background-color:indianred">
+                <span class="mdl-layout-title">공구함</span>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">메뉴</span>
+                <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/sedainside/ ">홈</a>
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/sedainside/팀소개.html ">팀소개</a>
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/sedainside/games.html ">Seda Games</a>
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/sedainside/music.html ">Seda Music</a>
+                <a class="mdl-navigation__link" href=" https://sedainside.github.io/sedainside/video.html ">Seda Video art</a>
+                </nav>
+            </div>
+        <main class="mdl-layout__content">
+            <div class="page-content; width:100%">
+
+            </div>
+        </main>
+    </div>
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        window.onload = function(){
+            var h = window.innerHeight;
+            var w = window.innerWidth;
+            document.getElementById("main").style.width = w + "px";
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop:$(hash).offset().top
+                    }, 2000, 'easeInOutQuint');
+                }
+            });
+        }
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() { 
+        $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+        },  3000);
+    </script>
+</body>
+</html>
+    
+    
+    
+    
+    
